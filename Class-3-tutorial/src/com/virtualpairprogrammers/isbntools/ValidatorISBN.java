@@ -2,8 +2,25 @@ package com.virtualpairprogrammers.isbntools;
 
 public class ValidatorISBN {
 
-	public boolean checkISBN(int isbn) {
-		return true;
+	public boolean checkISBN(String isbn) {
+			
+		if (isbn.length() != 10) {
+			throw new NumberFormatException("ISBN must be 10 digit long");
+		}
+		
+		int total = 0;
+		for (int i = 0; i < 10; i++) {
+			if (!Character.isDigit(isbn.charAt(i))) {
+				throw new NumberFormatException("ISBN number can only contain numeric  digit");
+			}
+			total += isbn.charAt(i) * (10 - i);
+		}
+		
+		if (total % 11 == 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-
+	
 }
