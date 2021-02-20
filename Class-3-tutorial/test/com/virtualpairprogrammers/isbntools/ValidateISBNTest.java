@@ -9,8 +9,30 @@ public class ValidateISBNTest {
 	@Test
 	public void checkAValidISBN() {
 		ValidateISBN validator = new ValidateISBN();
-		boolean result = validator.checkISBN(140449116);
-		assertTrue(result);
+		boolean result = validator.checkISBN("0140449116");
+		assertTrue("first isbn", result);
+		result = validator.checkISBN("0140177396");
+		assertTrue("second isbn", result);
+	}
+	
+	@Test
+	public void checkAnInvalidISBN(){
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("0140449117");
+		assertFalse(result);
+	}
+	
+	@Test(expected = NumberFormatException.class)
+	public void nineDigitISBNAreNotAllowed(){
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("014044911");
+	}
+	
+	@Test(expected=NumberFormatException.class)
+	public void nonNumericISBNsNotAllowed(){
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("helloworld");
+		
 	}
 
 }
