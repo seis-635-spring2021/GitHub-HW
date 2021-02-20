@@ -35,7 +35,7 @@ class ValidateISBNTest {
 	}
 	
 	@Test
-	public void nonNumericISBNs()
+	public void nonNumericISBNS()
 	{
 		fail();
 		

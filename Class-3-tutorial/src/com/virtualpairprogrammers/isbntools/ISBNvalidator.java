@@ -6,7 +6,7 @@ public class ISBNvalidator {
 		
 		if (isbn.length() != 10) 
 		{
-			throw new NumberFormatException("Nope");
+			throw new NumberFormatException("Nope!");
 			
 		}
 		
