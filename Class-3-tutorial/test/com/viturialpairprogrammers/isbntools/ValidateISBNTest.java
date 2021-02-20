@@ -22,4 +22,15 @@ public class ValidateISBNTest {
 		assertFalse(result);
 	}
 	
+	@Test(expected=NumberFormatException.class)
+	public void ninedigittestsarenotallowed() {
+		ValidateISBN val = new ValidateISBN();
+		boolean result = val.checkISBN("123456789");
+	}
+	
+	@Test(expected=NumberFormatException.class)
+	public void charactersarenotallowed() {
+		ValidateISBN val = new ValidateISBN();
+		boolean result = val.checkISBN("HelloWorld");
+	}	
 }
