@@ -1,6 +1,6 @@
-#GitHub-HW
+# GitHub-HW
 
-###Tools:
+### Tools:
 * IntelliJ Idea
 * Java 15
 * JUnit 4
