@@ -27,4 +27,18 @@ public class ValidateISBNTest
 		boolean result = validator.checkISBN("0140449117");
 		assertFalse(result);
 	}
+	
+	@Test (expected = NumberFormatException.class)
+	public void nine_Digit_ISBNs_Are_Not_Allowed()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("123456789");
+	}
+	
+	@Test (expected = NumberFormatException.class)
+	public void nonNumbericISBNAreNotAllowed()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		validator.checkISBN("helloworld");
+	}
 }
