@@ -21,5 +21,10 @@ public class ValidateISBNTest {
 		boolean result = validator.checkISBN("0140449117");
 		assertFalse(result);
 	}
+	
+	@Test
+	public void nineDigitISBNsAreNotAllowed() {
+		fail();
+	}
 
 }
