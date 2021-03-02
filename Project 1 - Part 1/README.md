@@ -26,3 +26,4 @@ The object of Rummy, and various other melding or matching games, is as follows:
   8. As a player, the game board/pieces should be manageable in size.
   9. As a player, the game board/pieces should be durable
   10. As the game creator, this game should easy to understand fo a multi-general/multi-cultural audiece
+  11. Testing.
